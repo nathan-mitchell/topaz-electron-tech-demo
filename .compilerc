@@ -6,7 +6,27 @@
           ["env", { "targets": { "electron": "1.6.0" } }],
           "react"
         ],
-        "plugins": ["transform-async-to-generator", "transform-es2015-classes", "react-hot-loader/babel"],
+        "plugins": [
+            [
+                "module-resolver", {
+                    "cwd": "babelrc",
+                    "root": ["./src"],
+                    "alias": {
+                        "adapters"     : "./src/adapters",
+                        "sagas"        : "./src/sagas",
+                        "actions"      : "./src/actions",
+                        "reducers"     : "./src/reducers",
+                        "utility"      : "./src/utility",
+                        "threejs"      : "./src/threejs"
+                    }
+                }
+            ],
+            "transform-async-to-generator",
+            "transform-class-properties",
+            "transform-es2015-classes",
+            "react-hot-loader/babel",
+            "transform-object-rest-spread"
+        ],
         "sourceMaps": "inline"
       }
     },
@@ -16,7 +36,26 @@
           ["env", { "targets": { "electron": "1.6.0" } }],
           "react"
         ],
-        "plugins": ["transform-async-to-generator", "transform-es2015-classes"],
+        "plugins":  [
+            [
+                "module-resolver", {
+                    "cwd": "babelrc",
+                    "root": ["./src"],
+                    "alias": {
+                        "adapters"     : "./src/adapters",
+                        "sagas"        : "./src/sagas",
+                        "actions"      : "./src/actions",
+                        "reducers"     : "./src/reducers",
+                        "utility"      : "./src/utility",
+                        "threejs"      : "./src/threejs"
+                    }
+                }
+            ],
+            "transform-async-to-generator",
+            "transform-class-properties",
+            "transform-es2015-classes",
+            "transform-object-rest-spread"
+        ],
         "sourceMaps": "none"
       }
     }
